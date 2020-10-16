@@ -31,7 +31,6 @@
 
   <!-- Uppgift 3 -->
   <section id="uppgift2">
-    <p>3</p>
     <?php
     class Food
     {
@@ -43,14 +42,46 @@
 
       function eat()
       {
-        echo "Nu åts en ";
+        echo "Nu åts en " . $this->name;
       }
     }
-    $maltid = new Food('Banan');
-    $maltid->eat();
-    echo "$maltid->name";
+    // $maltid = new Food('Banan');
+    // $maltid->eat();
+    // echo "$maltid->name";
     ?>
   </section>
+
+  <!-- Uppgift 4-5 -->
+  <?php
+  class Sandwitch extends Food
+  {
+    private $options;
+
+    function get_options()
+    {
+      return $this->options;
+    }
+
+    function set_options($options)
+    {
+      $this->options = $options;
+    }
+  }
+  $order = new Sandwitch('Macka');
+  $order->set_options(array(
+    "butter" => 1, "cheese" => 1, "ham" => 1,
+    // "mustard" => 1, "ketchup" => 1, "banana" => 1, "beef" => 1, "chicken" => 1, "prawn" => 1, "snail" => 1, "fish" => 1, "lettuce" => 1, "tomato" => 1, "vegemite" => 1
+  ));
+
+  $order->eat();
+  echo " upp som innehåller " . $order->get_options();
+
+  ?>
+
+
+
+
+
 </body>
 
 </html>
