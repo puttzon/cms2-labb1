@@ -6,16 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Labb1</title>
 </head>
-<!-- <nav>
-  <a href="#uppgift1">1</a>
-  <a href="#uppgift2">2</a>
-  <a href="#uppgift3">3</a>
-  <a href="#uppgift4">4</a>
-  <a href="#uppgift5">5</a>
-  <a href="#uppgift6">6</a>
-  <a href="#uppgift7">7</a>
-  <a href="#uppgift8">8</a>
-</nav> -->
+
 
 <body>
   <!-- Uppgift 1-2 -->
@@ -32,9 +23,11 @@
   <!-- Uppgift 3 -->
   <section id="uppgift2">
     <?php
+
     class Food
     {
       public $name;
+
       function __construct($name)
       {
         $this->name = $name;
@@ -66,6 +59,15 @@
     {
       $this->options = $options;
     }
+
+    function eat()
+    {
+
+      echo 'Nu åts en ' . $this->name . ' som innehåller ';
+      foreach ($this->options as $key => $value) {
+        echo $value . ' ' . $key . ' ';
+      }
+    }
   }
   $order = new Sandwitch('Macka');
   $order->set_options(array(
@@ -74,7 +76,7 @@
   ));
 
   $order->eat();
-  echo " upp som innehåller " . $order->get_options();
+
 
   ?>
 
